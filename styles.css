@@ -1,0 +1,738 @@
+@font-face {
+  font-family: "Perfume";
+  src: url("font/LTPerfume-2.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Green */
+  --primary-green--color: #7f8263; /* Names */
+  --secondary-green--color: #b7b597;
+  --third-green--color: #939b62;
+  --forth-green--color: #d5dbb3;
+
+  /* Beige */
+  --primary-beige--color: #f6e1c3;
+  --secondary-beige--color: #f1e5d1; /* Background */
+
+  /* Black */
+  --primary-black--color: #373a40;
+  --secondary-black--color: #31363f;
+}
+
+body {
+  font-family: "OpenSans", sans-serif;
+  width: 100vw;
+  background-color: var(--primary-black--color);
+}
+
+/* #main {
+  max-width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+} */
+
+@media (min-width: 320px) {
+  #main {
+    max-width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    align-items: center;
+    background-image: url("./assets/images/DSC09034.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  #main::after {
+    content: "";
+    position: absolute;
+    /* bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0; */
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    pointer-events: none; /* Asegura que el gradiente no interfiera con los clics */
+  }
+
+  .marriage-names {
+    font-family: "Perfume";
+    font-size: 3.2rem;
+    color: #f1e5d1;
+    /* margin-bottom: 5vh; */
+    text-align: left;
+  }
+
+  .marriage-date {
+    align-items: center;
+    color: var(--primary-beige--color);
+    display: flex;
+    /* font-size: 2rem; */
+    /* font-weight: 200; */
+    margin-bottom: 9vh;
+  }
+
+  .marriage-day {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0 10px 0 10px;
+  }
+
+  .marriage-month,
+  .marriage-year {
+    border-bottom: 1px solid var(--forth-green--color);
+    border-top: 1px solid var(--forth-green--color);
+    color: var(--secondary-beige--color);
+    font-size: 1.5rem;
+    font-weight: 200;
+  }
+
+  #main > *,
+  #dress_code > * {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté encima del gradiente */
+  }
+
+  #countdown-container {
+    background-color: #f2ebdf;
+    box-sizing: border-box;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .countdown {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .countdown-item {
+    height: 150px;
+    width: 150px;
+    color: white;
+    background-color: #70791b;
+    text-align: center;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .countdown h1 {
+    font-size: 2.5rem;
+    margin: 15px;
+  }
+
+  .countdown p {
+    font-size: 0.8rem;
+  }
+
+  .countdown-title {
+    font-family: "Perfume";
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    color: #70791b;
+  }
+
+  .countdown h1 #padrinos {
+    background-color: #f2ebdf;
+    /* padding: 10vh; */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .padrinos_message {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .card {
+    background-color: white;
+    padding: 1rem;
+    width: 80%;
+    margin: 0.8rem 0;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
+
+  .padrinos-name {
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: "Perfume";
+    letter-spacing: 0.025rem;
+    margin-top: 0.5rem;
+    color: #939b62;
+  }
+
+  .padrinos_item_title {
+    font-weight: bold;
+    text-align: center;
+    color: #70791b;
+  }
+
+  .padrinos_item_line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0.5rem 0;
+    color: #d5dbb3;
+  }
+
+  .padrinos-icon {
+    font-size: 1rem;
+  }
+
+  #hug {
+    background-image: url("./assets/images/DSC09721.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #invite,
+  #padrinos {
+    padding: 3% 6%;
+    background-color: #f2ebdf;
+    color: #939b62;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  #invite > p,
+  h3,
+  a {
+    font-size: 1.2rem;
+    padding: 2% 0;
+    text-align: center;
+    /* font-weight: bold; */
+    /* line-height: 1.3; */
+  }
+
+  .invite-address-name {
+    font-size: 1rem;
+    font-weight: bold;
+    word-spacing: 5px;
+    line-height: 1.2rem;
+  }
+
+  .invite-address-name {
+    font-size: 1rem;
+    font-weight: bold;
+    word-spacing: 5px;
+    line-height: 1.2rem;
+  }
+
+  .invite-address-name {
+    font-size: 1rem;
+    font-weight: bold;
+    word-spacing: 5px;
+    line-height: 1.2rem;
+  }
+
+  .invite-address {
+    text-align: center;
+  }
+
+  .invite-address-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh 0;
+  }
+
+  .invite-text.padrinos_message {
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 2vh;
+  }
+
+  .invite-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .invite-title {
+    font-family: "Perfume";
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .invited-people {
+    margin: 10px 0;
+    font-weight: 400;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .flower {
+    width: 100px;
+    height: 80px;
+  }
+
+  .sign {
+    font-size: 1.7rem;
+    font-family: "Perfume";
+    text-align: right;
+  }
+
+  .location {
+    background-color: #939b62;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    width: 50vw;
+    text-decoration: none;
+  }
+
+  #itinerary {
+    background-image: url("./assets/images/DSC09600.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .itinerary-background {
+    max-width: 100%;
+    /* height: 100vh; */
+    background-color: hsla(66, 14%, 45%, 0.8);
+    padding: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f2ebdf;
+    box-sizing: border-box;
+  }
+
+  .itinerary-title,
+  .dress-code-title,
+  .lodge-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  .line {
+    width: 20%;
+    margin: 2vh 0;
+  }
+
+  .itineary-schudle {
+    display: block;
+  }
+  .event {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .event-name-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 3px solid #f1e5d1;
+  }
+
+  .border-reverse {
+    border-right: 0;
+    border-left: 3px solid #f1e5d1;
+  }
+
+  .event-name {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0.6rem;
+  }
+
+  .event-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .event hr {
+    border: 1px dashed #f1e5d1;
+    flex: 1;
+  }
+
+  .event h6 {
+    flex: 1;
+    text-align: center;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .icon_size {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .icon-image {
+    width: 10vw;
+  }
+
+  .icon-container {
+    flex: 1;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #dress_code {
+    /* max-height: 100vh;
+    max-width: 100vw;
+    background-image: url("./assets/images/DSC09739.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; */
+    /* position: relative; */
+  }
+
+  .dress_code-container {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    background-color: #f2ebdf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 5vh;
+    box-sizing: border-box;
+    color: #7f8263;
+  }
+
+  /* .dress_code-container > * {
+    position: relative;
+    z-index: 9;
+  } */
+
+  .dress {
+    width: 20vh;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+  }
+  .dress-code_title_container,
+  .lodge_title_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dress-code_line {
+    border-color: #939b62;
+  }
+
+  .dress-code_gender-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dress-code_gender {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+  }
+
+  .dress-code-text > p {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "Perfume";
+    padding: 20px 0;
+  }
+
+  .dress-code-gender-text > h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "Perfume";
+    padding: 10px 0;
+  }
+
+  .dress-code-gender-text > p {
+    text-align: center;
+  }
+
+  .preset-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vh;
+    width: 90vw;
+    margin: 1vh 0;
+    /* background-color: rebeccapurple; */
+  }
+
+  .store-logo {
+    width: 15vw;
+    height: 15vw;
+  }
+  #transfer {
+    /* background-image: url("./assets/images/DSC00105.jpg");
+    background-repeat: no-repeat;
+    background-position: calc(-70vw);
+    background-size: cover; */
+  }
+  .transfer-container {
+    /* height: 100vh;
+    width: 100vw; */
+    background-color: #939b62;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    color: rgb(243, 240, 232);
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+  }
+
+  .transfer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: "center"; */
+    /* background-color: red; */
+  }
+
+  .transfer-item > h1 {
+    font-family: "Perfume";
+    font-size: 2rem;
+    color: #70791b;
+  }
+
+  .transfer-title {
+    font-family: "Perfume";
+    font-size: 2rem;
+  }
+
+  .transfer-item_text {
+    color: #939b62;
+    font-size: 1rem;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .transfer_text {
+    text-align: justify;
+    line-height: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .transfer_bank {
+    width: 45vw;
+    height: 10vw;
+  }
+  .transfer_account {
+    margin: 0.6rem 0;
+  }
+  .transfer_account > h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    /* padding: 0.6rem 0; */
+    letter-spacing: 0.2rem;
+    text-align: center;
+  }
+
+  .transfer_account > p {
+    font-size: 1rem;
+    padding: 0.6rem 0;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
+
+  .transfer-bank-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  .transfer-icon {
+    color: #7f8263;
+  }
+
+  #lodge {
+    background-color: #f2ebdf;
+    color: #7f8263;
+    padding: 2rem;
+    font-size: 1.1rem;
+    height: 100%;
+  }
+
+  .lodge_line {
+    color: #939b62;
+    border-width: 2px;
+  }
+
+  .lodge_hotel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .lodge_hotel p,
+  a {
+    margin: 0.3rem 0;
+    /* letter-spacing: 0.1rem; */
+  }
+
+  .lodge_hotel a {
+    text-decoration: none; /* Removes underline */
+  }
+  .lodge_hotel-title {
+    font-size: 1rem;
+    font-weight: bold;
+    word-spacing: 5px;
+    line-height: 1.2rem;
+  }
+
+  .lodge_hotel-phone {
+    color: #7f8263;
+    font-size: 1rem;
+  }
+
+  .photo {
+    width: 80vw;
+  }
+
+  .photo img {
+    width: 100%;
+  }
+
+  .confirmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .confirmation h4 {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.9rem;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .advertisement {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0.6rem 0;
+    line-height: 1.5rem;
+  }
+
+  .abbreviation {
+    font-size: 3.5rem;
+    font-family: "Perfume";
+    font-weight: 500;
+    text-align: center;
+    margin: 2rem 0 0 0;
+  }
+
+  .icon-hero {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .icon-hero > img {
+    width: 55%;
+    border-radius: 50%;
+  }
+}
+
+@media (min-width: 375px) {
+  .marriage-names {
+    font-size: 3.5rem;
+  }
+
+  .marriage-day {
+    font-size: 3.5rem;
+  }
+
+  .marriage-month,
+  .marriage-year {
+    font-size: 2rem;
+  }
+
+  /*  */
+
+  /*  */
+}
+
+@media (min-width: 425px) {
+  body {
+  }
+}
+@media (min-width: 768px) {
+  body {
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+  }
+}
