@@ -7,9 +7,53 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
+    <!-- Meta descripción para SEO -->
+    <meta
+      name="description"
+      content="Melisa Munguía y Alexis Delgado te invitan a su boda el 15 de Noviembre de 2024. Únete a nosotros para celebrar este día tan especial en el jardin Quinta Santa Rosa."
+    />
+
+    <!-- Open Graph para compartir en redes sociales -->
+    <meta
+      property="og:title"
+      content="Invitación de boda: Melisa Munguía y Alexis Delgado"
+    />
+    <meta
+      property="og:description"
+      content="Acompáñanos a celebrar el amor entre Melisa y Alexis el 15 de Noviembre de 2024 en el jardin Quinta Santa Rosa."
+    />
+    <meta
+      property="og:image"
+      content="https://melisayalexis.com/assets/images/DSC09034.webp"
+    />
+
+    <meta property="og:url" content="https://melisayalexis.com" />
+    <link rel="canonical" href="https://melisayalexis.com" />
+
+    <!-- Asegúrate de reemplazar esto con la URL de una imagen válida -->
+    <meta property="og:url" content="https://melisayalexis.com" />
+    <meta property="og:type" content="website" />
+    <title>M | A</title>
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./styles.css" />
-    <title>M | A</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <section id="main">
@@ -179,7 +223,7 @@
           <div class="event">
             <div class="event-name-container">
               <i class="fa-regular fa-face-grin-hearts icon"></i>
-              <h6 class="event-name">BIENVENIDA <br />DE NOVIOS</h6>
+              <h6 class="event-name">RECEPCION</h6>
             </div>
             <div class="icon-container">
               <div class="event-time row-reverse">
@@ -190,41 +234,45 @@
           </div>
           <div class="event row-reverse">
             <div class="event-name-container border-reverse">
-              <i class="fa-solid fa-utensils icon"></i>
-              <h6 class="event-name">CENA</h6>
+              <!-- <i class="fa-solid fa-utensils icon"></i> -->
+              <i class="fa-regular fa-heart icon"></i>
+              <h6 class="event-name">VALS</h6>
             </div>
             <div class="icon-container">
               <div class="event-time">
-                <h6>10:00 pm</h6>
+                <h6>9:40 pm</h6>
                 <hr />
               </div>
             </div>
           </div>
           <div class="event">
             <div class="event-name-container">
-              <i class="fa-solid fa-champagne-glasses icon"></i>
-              <h6 class="event-name">BRINDIS</h6>
+              <!-- <i class="fa-solid fa-champagne-glasses icon"></i> -->
+              <i class="fa-solid fa-utensils icon"></i>
+              <h6 class="event-name">CENA</h6>
             </div>
             <div class="icon-container">
               <div class="event-time row-reverse">
-                <h6>11:00 pm</h6>
+                <h6>10:00 pm</h6>
                 <hr />
               </div>
             </div>
           </div>
           <div class="event row-reverse">
             <div class="event-name-container border-reverse">
-              <i class="fa-regular fa-heart icon"></i>
-              <h6 class="event-name">VALS</h6>
+              <!-- <i class="fa-regular fa-heart icon"></i> -->
+              <!-- <i class="fa-solid fa-utensils icon"></i> -->
+              <i class="fa-solid fa-children icon"></i>
+              <h6 class="event-name">BAILE</h6>
             </div>
             <div class="icon-container">
               <div class="event-time">
-                <h6>12:00 pm</h6>
+                <h6>10:30 pm</h6>
                 <hr />
               </div>
             </div>
           </div>
-          <div class="event">
+          <!-- <div class="event">
             <div class="event-name-container">
               <i class="fa-solid fa-children icon"></i>
               <h6 class="event-name">BAILE</h6>
@@ -235,7 +283,7 @@
                 <hr />
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -305,7 +353,7 @@
           <hr class="line dress-code_line" />
           <h1>Amazon</h1>
           <a
-            href="https://www.amazon.com.mx/wedding/registry/FV6CIFKAAVG4
+            href="https://www.amazon.com.mx/wedding/registry/2GYDIKIEX970C
           "
             target="_blank"
             class="location"
@@ -324,16 +372,12 @@
           </div>
           <div class="transfer_account">
             <h6>Cuenta CLABE</h6>
-            <p>012 010 01179364811 5</p>
+            <p>012010011793648115</p>
           </div>
 
           <div class="transfer_account">
             <h6>Número de tarjeta</h6>
-            <p>4152 3140 7863 0962</p>
-          </div>
-          <div class="transfer_account">
-            <h6>Número de tarjeta</h6>
-            <p>117 936 4811</p>
+            <p>4152314078630962</p>
           </div>
         </div>
 
@@ -482,7 +526,7 @@
           )
           .join("");
         const mensaje = `
-                <p class="invite-text invite-title">¡Pase para 2 persona!</p>
+                <p class="invite-text invite-title">¡Pase para ${invitados.length} persona!</p>
                 <ul class="">${listaInvitados}</ul>
             `;
         invitacionDiv.innerHTML = mensaje;
@@ -507,7 +551,7 @@
           // const mensajeFinal = mensajes.join("\n");
 
           // Redirigir a WhatsApp con el mensaje
-          const whatsappURL = `https://wa.me/?text=${encodeURIComponent(
+          const whatsappURL = `https://wa.me/+526622035254/?text=${encodeURIComponent(
             "Confirmo mi asistencia a la Boda de Melisa y Alexis a nombre de:"
           )}`;
           window.open(whatsappURL, "_blank");
