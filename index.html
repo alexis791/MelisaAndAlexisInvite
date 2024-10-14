@@ -57,7 +57,7 @@
   </head>
   <body>
     <section id="main">
-      <audio controls autoplay style="display: none">
+      <audio controls autoplay="true" style="display: none">
         <source src="./assets/audios/bailando_bachata.mp4" type="audio/mp4" />
         Your browser does not support the audio element.
       </audio>
@@ -156,9 +156,7 @@
           >Ubicación</a
         >
       </div>
-      <p class="invite-text">
-        Al finalizar la ceremonia te esperamos para celebrar en:
-      </p>
+      <p class="invite-text">Te esperamos para celebrar en:</p>
       <div class="invite-address-container card">
         <h3 class="invite-address-name">QUINTA SANTA ROSA</h3>
         <address class="invite-address">
@@ -180,7 +178,7 @@
       <div class="itinerary-background">
         <h2 class="itinerary-title">ITINERARIO</h2>
         <hr class="line" />
-        <div>
+        <div class="event_container">
           <div class="event">
             <div class="event-name-container">
               <i class="fa-solid fa-church icon"></i>
@@ -235,12 +233,13 @@
           <div class="event row-reverse">
             <div class="event-name-container border-reverse">
               <!-- <i class="fa-solid fa-utensils icon"></i> -->
-              <i class="fa-regular fa-heart icon"></i>
-              <h6 class="event-name">VALS</h6>
+              <!-- <i class="fa-regular fa-heart icon"></i> -->
+              <i class="fa-solid fa-utensils icon"></i>
+              <h6 class="event-name">CENA</h6>
             </div>
             <div class="icon-container">
               <div class="event-time">
-                <h6>9:40 pm</h6>
+                <h6>9:30 pm</h6>
                 <hr />
               </div>
             </div>
@@ -248,8 +247,9 @@
           <div class="event">
             <div class="event-name-container">
               <!-- <i class="fa-solid fa-champagne-glasses icon"></i> -->
-              <i class="fa-solid fa-utensils icon"></i>
-              <h6 class="event-name">CENA</h6>
+              <!-- <i class="fa-solid fa-utensils icon"></i> -->
+              <i class="fa-regular fa-heart icon"></i>
+              <h6 class="event-name">ENTRADA <br />DE NOVIOS</h6>
             </div>
             <div class="icon-container">
               <div class="event-time row-reverse">
@@ -299,7 +299,7 @@
 
           <div class="dress-code_gender-container">
             <div class="dress-code_gender">
-              <div>
+              <div class="dress_image_container">
                 <img
                   src="./assets//icons/dress-svgrepo-com (1).png"
                   class="icon_size"
@@ -511,8 +511,6 @@
       const invitadosParam = getQueryParam("invitados");
       // Convertir el string de invitados en un array y manejar los nombres
       const invitados = invitadosParam ? invitadosParam.split(",") : [];
-      console.log({ invitados });
-
       // Referencia a la sección donde se mostrará la invitación
       const invitacionDiv = document.getElementById("invitacion");
 
@@ -551,9 +549,7 @@
           // const mensajeFinal = mensajes.join("\n");
 
           // Redirigir a WhatsApp con el mensaje
-          const whatsappURL = `https://wa.me/+526622035254/?text=${encodeURIComponent(
-            "Confirmo mi asistencia a la Boda de Melisa y Alexis a nombre de:"
-          )}`;
+          const whatsappURL = `https://wa.me/+526622035254/?text=Hola%20%0A%0AConfirmo%20mi%20asistencia%20a%20la%20boda%20de%20Melisa%20y%20Alexis.%20A%20continuación,%20por%20favor%20menciona%20los%20nombres%20de%20las%20personas%20que%20asistirán:`;
           window.open(whatsappURL, "_blank");
         } else {
           alert("No se encontraron invitados en la URL.");
